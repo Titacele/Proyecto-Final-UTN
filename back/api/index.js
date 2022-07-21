@@ -4,45 +4,60 @@ const { Op } = require("sequelize");
 // Traemos la DB
 const db = require('../models');
 
-// SELECT * FROM libros
-// JOIN ..... autor
-const getBooks = async () => {
-    const libros = await db.libro.findAll({
-                            include: db.autor
+// SELECT * FROM tareas
+// JOIN ..... empleado
+// JOIN ..... lugar
+const getTasks = async () => {
+    const tareas = await db.tarea.findAll({
+                            include: db.empleado,
+                            include: db.lugar,
+                            order: ['fecha'],
                         })
                         .then(results => {
                             return results;
                         });
 
-    return libros;
+    return tareas;
 }
 
-const getAuthors = async () => {
-    const authors = await db.autor.findAll({
+const getEmployees = async () => {
+    const empleados = await db.empleado.findAll({
                         order: ['nombreCompleto'],
                     }).then(results => {
                         return results;
                     });
 
-    return authors;
+    return empleados;
 }
 
-const getBookById = async (id) => {
+const getPlaces = async () => {
+    const lugares = await db.lugar.findAll({
+                        order: ['localidad'],
+                    }).then(results => {
+                        return results;
+                    });
+
+    return lugares;
+}
+
+
+//ver despues si la necesito
+const getTasksById = async (id) => {
     // console.log('Recibiste', id);
     // Find by primary key / buscar por ID
-    const book = await db.libro.findByPk(id, {include: db.autor})
+    const tarea = await db.tarea.findByPk(id, {include: db.empleado})
                     .then(result => {
                         return result;
                     });
 
-    return book;
+    return tarea;
 };
 
-// WHERE titulo LIKE "%termino%"
-const findBookByTitle = async (termino) => {
-    const books = await db.libro.findAll({
+// WHERE descripcion LIKE "%termino%"
+const findTaskByDescription = async (termino) => {
+    const tareas = await db.tarea.findAll({
         where: {
-            titulo: {
+            descripcion: {
                 [Op.substring]: termino,
             }
         }
@@ -50,21 +65,22 @@ const findBookByTitle = async (termino) => {
         return result;
     });
 
-    return books;
+    return tareas;
 }
 
-const insertBook = async (titulo, precio, portada, autorId) => {
-    const libro = await db.libro.create({
-        titulo, precio, portada, autorId
+const insertTasks = async (fecha, descripcion, empleadoId, lugarId) => {
+    const tarea = await db.tarea.create({
+        fecha, descripcion, empleadoId, lugarId
     });
-    return libro;
+    return tarea;
 }
 
 
 module.exports = {
-    getBooks,
-    getAuthors,
-    getBookById,
-    findBookByTitle,
-    insertBook
+    getTasks,
+    getEmployees,
+    getPlaces,
+    getTasksById,
+    findTaskByDescription,
+    insertTasks
 }

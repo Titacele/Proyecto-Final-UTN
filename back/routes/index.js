@@ -5,29 +5,35 @@ var router = express.Router();
 const api = require('../api');
 
 /* GET home page. */
-router.get('/libros', async (req, res) => {
-  const libros = await api.getBooks();
-  res.send(libros);
+router.get('/tareas', async (req, res) => {
+  const tareas = await api.getTasks();
+  res.send(tareas);
 });
 
-router.get('/libro/:id', async (req, res) => {
+router.get('/tarea/:id', async (req, res) => {
   // Le enviamos como parámetro el ID del libro que quiere ver el usuario
-  const libro = await api.getBookById(req.params.id);
-  res.send(libro);
+  const tarea = await api.getTasksById(req.params.id);
+  res.send(tarea);
 });
 
-// Mostrar el listado en JSON de todos los autores
-router.get('/autores', async (req, res) => {
-  const autores = await api.getAuthors();
-  res.send(autores);
+// Mostrar el listado en JSON de todos los empleados
+router.get('/empleado', async (req, res) => {
+  const empleados = await api.getEmployees();
+  res.send(empleados);
 });
 
-/* POST agregar-libro */
-router.post('/agregar-libro', async (req, res) => {
-  let {titulo, autor, precio} = req.body;
+// Mostrar el listado en JSON de todos los lugares
+router.get('/lugares', async (req, res) => {
+  const lugareas = await api.getPlaces();
+  res.send(lugares);
+});
+
+/* POST agregar-tarea */
+router.post('/agregar-tarea', async (req, res) => {
+  let {fecha, descripcion, empleadoId, lugarId} = req.body;
 
   // titulo, precio, portada, autorId
-  await api.insertBook(titulo, precio, '', autor);
+  await api.insertTasks(fecha, descripcion, empleadoId, lugarId);
 
   res.status(200).send('ok');
 });
@@ -35,7 +41,7 @@ router.post('/agregar-libro', async (req, res) => {
 /* GET buscar (Desde el frontend llamamos a: localhost:3000/api/buscar?termino=sarasa) */
 router.get('/buscar', async (req, res) => {
   const { termino } = req.query;
-  const results = await api.findBookByTitle(termino);
+  const results = await api.findTaskByDescription(termino);
 
   //Devuelvo el resultado de esa búsqueda en formato JSON
   res.send(results);

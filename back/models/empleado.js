@@ -1,21 +1,21 @@
 module.exports = (sequelize, DataTypes) => {
-    const Autor = sequelize.define('autor', {
+    const Empleado = sequelize.define('empleado', {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        nombreCompleto: DataTypes.STRING(150),
-        codigoPais: DataTypes.STRING(2)
+        nombreCompleto: DataTypes.STRING(100),
+        dni: DataTypes.INTEGER,
         },
         {
             freezeTableName: true,
             timestamps: false
         });
         
-    Autor.associate = (models) => {
-        Autor.hasMany(models.libro);
+    Empleado.associate = (models) => {
+        Empleado.hasMany(models.tarea);
     };
-    return Autor;
+    return Empleado;
 }
     
