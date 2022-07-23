@@ -40,17 +40,22 @@ const getPlaces = async () => {
     return lugares;
 }
 
-
-//ver despues si la necesito
 const getTasksById = async (id) => {
-    // console.log('Recibiste', id);
-    // Find by primary key / buscar por ID
     const tarea = await db.tarea.findByPk(id, {include: db.empleado})
                     .then(result => {
                         return result;
                     });
 
     return tarea;
+};
+
+const getEmployeesById = async (id) => {
+    const empleado = await db.empleado.findByPk(id)
+                    .then(result => {
+                        return result;
+                    });
+
+    return empleado;
 };
 
 // WHERE descripcion LIKE "%termino%"
@@ -79,6 +84,7 @@ const insertTasks = async (fecha, descripcion, empleadoId, lugarId) => {
 module.exports = {
     getTasks,
     getEmployees,
+    getEmployeesById,
     getPlaces,
     getTasksById,
     findTaskByDescription,

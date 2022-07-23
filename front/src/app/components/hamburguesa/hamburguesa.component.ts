@@ -8,13 +8,34 @@ import { TareasService } from 'src/app/services/tareas.service';
 })
 export class HamburguesaComponent implements OnInit {
 
-  show = true;
+  show = window.screen.width>767 ? true : false;
 
   constructor(
     private tareasService: TareasService,
   ) { }
 
+  empleados: any;
   tareas: any;
+  value: any;
+
+  mostrarMenu () {
+    this.show=!this.show;
+    console.log(this.show);
+  }
+
+  devolverValue() {
+    this.tareasService.getIdEmpleado().subscribe((value: any) => {
+    console.log(value);
+    this.value = value;
+    });
+  }
+ 
+  mostrarEmpleados () {
+    this.tareasService.getEmpleados().subscribe((empleados: any) => {
+      console.log(empleados);
+      this.empleados = empleados;
+    });
+  }
 
   mostrarInfoTareas () {
     this.tareasService.getTasks().subscribe((tareas: any) => {
@@ -25,6 +46,9 @@ export class HamburguesaComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.mostrarEmpleados();
+    this.devolverValue();
+    this.mostrarInfoTareas();
   }
 
 }

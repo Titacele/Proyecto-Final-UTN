@@ -18,5 +18,17 @@ export class TareasService {
     return this.http.get(`/api/buscar?termino=${termino}`);
   }
 
+  getEmpleados () {
+    return this.http.get('/api/empleado');
+  }
+
+  getIdEmpleado () {
+    return this.http.get('/empleado/:id');
+  }
+
+  getLugares () {
+    return this.http.get('/api/lugares');
+  }
+
 }
 

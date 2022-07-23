@@ -16,6 +16,11 @@ router.get('/tarea/:id', async (req, res) => {
   res.send(tarea);
 });
 
+router.get('/empleado/:id', async (req, res) => {
+  const empleado = await api.getEmployeesById(req.params.id);
+  res.send(empleado);
+});
+
 // Mostrar el listado en JSON de todos los empleados
 router.get('/empleado', async (req, res) => {
   const empleados = await api.getEmployees();
@@ -24,7 +29,7 @@ router.get('/empleado', async (req, res) => {
 
 // Mostrar el listado en JSON de todos los lugares
 router.get('/lugares', async (req, res) => {
-  const lugareas = await api.getPlaces();
+  const lugares = await api.getPlaces();
   res.send(lugares);
 });
 

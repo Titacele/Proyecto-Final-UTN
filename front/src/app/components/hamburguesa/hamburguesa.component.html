@@ -1,22 +1,24 @@
-<!-- <input type="button" value="Menú" class="boton" id="boton"> -->
 
-<div class="menu" *ngIf="show">
-    <button class="clickBtn" (click)="show=!show" >Menú empleado</button>
+<div class="menu" >
+    <button class="clickBtn" (click)="mostrarMenu()" >Menú empleado</button>
 <br>
-    <label>
-        <input type="checkbox" > Empleado 1 
+    <div class="sub-menu" *ngIf="show">
+    <label *ngFor="let empleado of empleados">
+        <input type="checkbox" (click)="devolverValue()" value="{empleado.id}"> {{empleado.nombreCompleto}} 
     </label>
+</div>
+    
+<div class="mostrar-tareas" *ngIf="this.value">
 
-<!-- Como hago que aparezca el menu cuando hago click y o al reves (si pongo true se va si saco el ! se va) -->
-    <div class="empleado">
-        <app-card
-           *ngFor="let tarea of tareas" >
-                <label>
-                    <input type="checkbox" > [asignado] = "tarea.empleadoId" 
-                </label>
-        ></app-card>
-    </div>
-    
-    
-    
-    
+    <app-card
+        *ngFor="let tarea of tareas"
+        [fecha] = "tarea.fecha"
+        [descripcion] = "tarea.descripcion"
+        [asignado] = "tarea.empleadoId"
+        [lugar] = "tarea.lugarId" 
+    ></app-card>
+
+
+</div>
+
+

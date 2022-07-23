@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 //Importamos la configuración básica de formularios de Angular
 import { FormControl, FormGroup } from '@angular/forms';
-//Importamos el servicio (libreriaService)
-import { LibreriaService } from 'src/app/services/libreria.service';
+// //Importamos el servicio (libreriaService)
+// import { LibreriaService } from 'src/app/services/libreria.service';
 
 @Component({
   selector: 'app-buscar',
@@ -19,7 +19,7 @@ export class BuscarComponent implements OnInit {
 
   //en constructor de declara los servicios
   constructor(
-    private libreriaService: LibreriaService
+    // private libreriaService: LibreriaService
   ) { }
 
 //esto se declara abajo de constructor xq necesita el servicio (que lo importamos arriba y
@@ -29,9 +29,9 @@ onSubmit () {
   //conseguir el dato de lo qu tipió el usuario
   const { termino } = this.busquedaForm.value;  
   //llamar al servicio y enviarle a la funcion findBooks el termino
-  this.libreriaService.findBooks(termino).subscribe(libros => {
-    console.log('Resultados', libros);
-  });
+  // this.libreriaService.findBooks(termino).subscribe(libros => {
+  //   console.log('Resultados', libros);
+  //});
   
 }
 
