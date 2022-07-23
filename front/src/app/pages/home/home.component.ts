@@ -9,9 +9,10 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  title = 'Bienvenides a mi proyecto';
+  title = 'Tareas';
 
   ngOnInit(): void {
+    
   }
 
 }

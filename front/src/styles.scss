@@ -13,16 +13,23 @@
 :root {
     --blanco: #FFF;
     --negro: #000;
-    --gris: #333;
-    --naranja: #F90;
-    --violeta: purple;
-    --amarillo: yellow;
+    --gris: rgb(182, 174, 174);
+    --lavanda: lavender;
+    --azul: slateblue;
+    --violeta: plum;
+    --celeste: lightsteelblue;
 }
 
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: var(--lavanda);
 }
 
 img {
     width: 100%;
+}
+
+.titulo_ppal{
+    color: var(--gris);
+    text-align: center;
 }

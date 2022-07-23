@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 // Importamos el servicio de gatitos
 import { GatitosService } from 'src/app/services/gatitos.service';
-// Importamos el servicio de libreria
-import { LibreriaService } from 'src/app/services/libreria.service';
+
 
 @Component({
-  selector: 'app-nosotros',
-  templateUrl: './nosotros.component.html',
-  styleUrls: ['./nosotros.component.scss']
+  selector: 'app-mapa',
+  templateUrl: './mapa.component.html',
+  styleUrls: ['./mapa.component.scss']
 })
 
 // interface InfoGatitos {
@@ -15,11 +14,11 @@ import { LibreriaService } from 'src/app/services/libreria.service';
 //   length: number;
 // }
 
-export class NosotrosComponent implements OnInit {
+export class MapaComponent implements OnInit {
 
   constructor(
     private gatitosService: GatitosService,
-    private libreriaService: LibreriaService
+
   ) { }
 
   data: any;
@@ -29,12 +28,6 @@ export class NosotrosComponent implements OnInit {
     this.gatitosService.getGatitosInfo().subscribe(respuesta => {
       console.log(respuesta);
       this.data = respuesta;
-    });
-
-    // Llamamos a todos los libros
-    this.libreriaService.getBooks().subscribe((libros: any) => {
-      console.log(libros);
-      this.libros = libros;
     });
   }
 

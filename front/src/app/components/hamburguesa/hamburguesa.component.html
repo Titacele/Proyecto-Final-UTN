@@ -1,0 +1,22 @@
+<!-- <input type="button" value="Menú" class="boton" id="boton"> -->
+
+<div class="menu" *ngIf="show">
+    <button class="clickBtn" (click)="show=!show" >Menú empleado</button>
+<br>
+    <label>
+        <input type="checkbox" > Empleado 1 
+    </label>
+
+<!-- Como hago que aparezca el menu cuando hago click y o al reves (si pongo true se va si saco el ! se va) -->
+    <div class="empleado">
+        <app-card
+           *ngFor="let tarea of tareas" >
+                <label>
+                    <input type="checkbox" > [asignado] = "tarea.empleadoId" 
+                </label>
+        ></app-card>
+    </div>
+    
+    
+    
+    

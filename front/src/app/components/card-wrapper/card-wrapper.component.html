@@ -1,15 +1,11 @@
 <div class="wrapper">
     <app-card
-        *ngFor="let viaje of viajes"
-        [imagen] = "viaje.imagen"
-        [categoria] = "viaje.categoria"
-        [titulo] = "viaje.titulo"
-        [contenido] = "viaje.contenido"
-        [destacado] = "viaje.destacado"
-        [precio] = "viaje.precio"
+        *ngFor="let tarea of tareas"
+        [fecha] = "tarea.fecha"
+        [descripcion] = "tarea.descripcion"
+        [asignado] = "tarea.empleadoId"
+        [lugar] = "tarea.lugarId" 
     ></app-card>
 </div>
 
-<!-- <ul *ngFor="let viaje of viajes">
-    <li>{{ viaje.titulo }}</li>
-</ul> -->
+

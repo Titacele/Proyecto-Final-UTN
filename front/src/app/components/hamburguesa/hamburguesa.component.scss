@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 20px;
+ }
+
+ .clickBtn {
+    display: none;
+    padding: 8px;
+}
+
+.menu {
+    margin: -7px;
+}
+
+@media (max-width: 767px) {
+    .clickBtn {
+        display: block;
+    }
+}

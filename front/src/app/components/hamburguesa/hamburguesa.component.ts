@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { TareasService } from 'src/app/services/tareas.service';
 
 @Component({
-  selector: 'app-card-wrapper',
-  templateUrl: './card-wrapper.component.html',
-  styleUrls: ['./card-wrapper.component.scss']
+  selector: 'app-hamburguesa',
+  templateUrl: './hamburguesa.component.html',
+  styleUrls: ['./hamburguesa.component.scss']
 })
-export class CardWrapperComponent implements OnInit {
+export class HamburguesaComponent implements OnInit {
+
+  show = true;
 
   constructor(
     private tareasService: TareasService,
@@ -21,11 +23,11 @@ export class CardWrapperComponent implements OnInit {
     });
   }
 
-  title = 'Tareas';
 
-  
   ngOnInit(): void {
-    this.mostrarInfoTareas();
   }
 
 }
+
+
+

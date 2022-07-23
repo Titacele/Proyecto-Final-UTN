@@ -1,8 +1,10 @@
 
 .lista {
     list-style-type: none;
-    background-color: var(--violeta);
+    background-color: var(--azul);
     display: flex;
+    margin: 10px;
+    border-radius: 10px;
     
     &-item {
         flex-grow: 1;
