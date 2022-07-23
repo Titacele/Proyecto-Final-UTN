@@ -11,12 +11,13 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { CardComponent } from './components/card/card.component';
 import { CardWrapperComponent } from './components/card-wrapper/card-wrapper.component';
-import { MapaComponent } from './pages/mapa/mapa.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { HamburguesaComponent } from './components/hamburguesa/hamburguesa.component';
+import { MapasComponent } from './pages/mapas/mapas.component';
+import { AgregarComponent } from './pages/agregar/agregar.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +25,13 @@ import { HamburguesaComponent } from './components/hamburguesa/hamburguesa.compo
     NavComponent,
     CardComponent,
     CardWrapperComponent,
-    MapaComponent,
     ContactoComponent,
     HomeComponent,
     NotFoundComponent,
     BuscarComponent,
-    HamburguesaComponent
+    HamburguesaComponent,
+    MapasComponent,
+    AgregarComponent
   ],
   imports: [
     BrowserModule,
