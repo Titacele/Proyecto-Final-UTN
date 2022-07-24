@@ -9,7 +9,7 @@ export class CardComponent implements OnInit {
 
   constructor() { }
 
-  @Input() fecha = Date;
+  @Input() fecha = Date; 
   @Input() descripcion: string | undefined;
   @Input() asignado: string | undefined;
   @Input() lugar: string | undefined;

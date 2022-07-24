@@ -26,8 +26,16 @@ export class TareasService {
     return this.http.get('/empleado/:id');
   }
 
+  findEmpleado (termino: string) {
+    return this.http.get(`/api/buscar?termino=${termino}`);
+  }
+
   getLugares () {
     return this.http.get('/api/lugares');
+  }
+
+  insertarTarea () {
+    return this.http.post('/agregar-tarea', tareas);
   }
 
 }

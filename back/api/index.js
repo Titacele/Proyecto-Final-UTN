@@ -41,7 +41,8 @@ const getPlaces = async () => {
 }
 
 const getTasksById = async (id) => {
-    const tarea = await db.tarea.findByPk(id, {include: db.empleado})
+    const tarea = await db.tarea.findByPk(id, {include: db.empleado,
+                                               include: db.lugar })
                     .then(result => {
                         return result;
                     });
@@ -61,6 +62,8 @@ const getEmployeesById = async (id) => {
 // WHERE descripcion LIKE "%termino%"
 const findTaskByDescription = async (termino) => {
     const tareas = await db.tarea.findAll({
+                            include: db.empleado,
+                            include: db.lugar,
         where: {
             descripcion: {
                 [Op.substring]: termino,
@@ -77,6 +80,7 @@ const insertTasks = async (fecha, descripcion, empleadoId, lugarId) => {
     const tarea = await db.tarea.create({
         fecha, descripcion, empleadoId, lugarId
     });
+    
     return tarea;
 }
 

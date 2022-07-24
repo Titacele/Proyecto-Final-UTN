@@ -11,8 +11,9 @@ export class AgregarComponent implements OnInit {
 
   agregarForm = new FormGroup({
     fecha: new FormControl(),
-    descripcion: new FormControl()
-
+    descripcion: new FormControl(),
+    empleadoId: new FormControl(),
+    lugarId: new FormControl(),
   });
 
   constructor(
@@ -21,6 +22,7 @@ export class AgregarComponent implements OnInit {
 
   empleados: any;
   lugares: any;
+  agregar: any;
 
   mostrarEmpleados () {
     this.tareasService.getEmpleados().subscribe((empleados: any) => {
@@ -35,6 +37,15 @@ export class AgregarComponent implements OnInit {
       this.lugares = lugares;
   });
   }
+
+  onSubmit() {
+    console.log(this.agregarForm.value);
+
+    this.tareasService.insertarTarea().subscribe((agregar: any) => {
+      this.agregar = agregar;
+  });
+  }
+
 
   ngOnInit(): void {
     this.mostrarEmpleados();

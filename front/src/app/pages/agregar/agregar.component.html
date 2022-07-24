@@ -1,6 +1,6 @@
 <h1>Agregar tarea</h1>
-
-    <form class="form-agregar" [formGroup]="agregarForm">
+ 
+    <form class="form-agregar" [formGroup]="agregarForm" (ngSubmit)="onSubmit()">
         <label for="info" class="form-agregar_label">
             Título:
             <input type="date" id="info" formControlname= "info" name="fecha"required>
@@ -26,5 +26,5 @@
         </label>
 
         <br>
-        <input type="submit" value="Agregar tarea">
+        <input type="submit" value="Agregar tarea"> 
     </form>
