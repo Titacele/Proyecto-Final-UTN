@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // Importamos el servicio de gatitos
-import { GatitosService } from 'src/app/services/gatitos.service';
+import { MapsService } from 'src/app/services/maps.service';
 
 @Component({
   selector: 'app-mapas',
@@ -10,22 +10,22 @@ import { GatitosService } from 'src/app/services/gatitos.service';
 export class MapasComponent implements OnInit {
 
   constructor(
-    private gatitosService: GatitosService,
+    private mapsService: MapsService,
 
   ) { }
 
-  data: any;
+  maps: any;
 
-  mostrarInfoGatitos () {
-    this.gatitosService.getGatitosInfo().subscribe(respuesta => {
+  mostrarInfoMaps () {
+    this.mapsService.getMapsInfo().subscribe(respuesta => {
       console.log(respuesta);
-      this.data = respuesta;
+      this.maps = respuesta;
     });
   }
 
   // onInit significa cuando se termina de cargar el componente
   ngOnInit(): void {
-    this.mostrarInfoGatitos();
+    this.mostrarInfoMaps();
   }
 
 }

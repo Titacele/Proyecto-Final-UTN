@@ -37,7 +37,7 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

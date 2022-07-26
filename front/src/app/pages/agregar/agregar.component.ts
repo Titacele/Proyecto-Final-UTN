@@ -22,7 +22,7 @@ export class AgregarComponent implements OnInit {
 
   empleados: any;
   lugares: any;
-  agregar: any;
+  tarea: any;
 
   mostrarEmpleados () {
     this.tareasService.getEmpleados().subscribe((empleados: any) => {
@@ -38,18 +38,19 @@ export class AgregarComponent implements OnInit {
   });
   }
 
+  
+
   onSubmit() {
     console.log(this.agregarForm.value);
 
-    this.tareasService.insertarTarea().subscribe((agregar: any) => {
-      this.agregar = agregar;
-  });
+
   }
 
 
   ngOnInit(): void {
     this.mostrarEmpleados();
     this.mostrarLugares()
+
   }
 
 }

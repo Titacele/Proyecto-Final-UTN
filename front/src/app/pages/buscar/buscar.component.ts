@@ -30,7 +30,7 @@ onSubmit () {
   //llamar al servicio y enviarle a la funcion findBooks el termino
   this.tareasService.findTasks(termino).subscribe(tareas => {
   console.log(tareas);
-   this.tarea = tareas;
+  this.tarea = tareas;
   });
 
 

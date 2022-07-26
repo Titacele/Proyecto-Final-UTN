@@ -34,9 +34,9 @@ export class TareasService {
     return this.http.get('/api/lugares');
   }
 
-  insertarTarea () {
-    return this.http.post('/agregar-tarea', tareas);
-  }
+  // insertarTarea () {
+  //   return this.http.post('/agregar-tarea', tareas);
+  // }
 
 }
 
