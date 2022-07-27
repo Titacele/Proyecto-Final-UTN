@@ -10,13 +10,12 @@ import { TareasService } from 'src/app/services/tareas.service';
 })
 export class BuscarComponent implements OnInit {
 
-  //Acá declaramos el formulario, indicando los campos que tiene
-//Al campo de termino lo dejamos vacío para indicar que de manera predeterminada va a estar vacío
   busquedaForm = new FormGroup({
     termino: new FormControl(),
   });
 
-  //en constructor de declara los servicios
+//tareaFiltrada = false;
+  
   constructor(
     private tareasService: TareasService
   ) { }
@@ -25,14 +24,17 @@ export class BuscarComponent implements OnInit {
 
 onSubmit () {
   console.log('Va bien');
-  //conseguir el dato de lo que tipió el usuario
+  
   const { termino } = this.busquedaForm.value;  
-  //llamar al servicio y enviarle a la funcion findBooks el termino
   this.tareasService.findTasks(termino).subscribe(tareas => {
   console.log(tareas);
   this.tarea = tareas;
   });
 
+  //const { termino } = this.busquedaForm.value;
+  //this.tareasService.getTasks( ).subscibe (respuesta => {
+    //console.log (respuesta);
+  //});
 
   
 }

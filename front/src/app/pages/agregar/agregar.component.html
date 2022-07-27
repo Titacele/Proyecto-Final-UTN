@@ -3,30 +3,33 @@
     <form class="form-agregar" [formGroup]="agregarForm" (ngSubmit)="onSubmit()">
         <label for="info" class="form-agregar_label">
             Título:
-            <input type="date" id="info" formControlname= "info" name="fecha"required>
+            <input type="date" id="fecha" formControlName= "fecha" name="fecha"required>
         </label>
         <br>
         <label class="form-agregar_label" for="info">
                Descripcion:
-                <textarea id="info" formControlname= "info" name="descripcion" rows="4" required></textarea>
+                <textarea id="descripcion" formControlName= "descripcion" rows="4" required></textarea>
         </label>
         <br>
         <label class="form-agregar_label">
             Empleado: <br>
-            <select id="info" formControlname= "info" name="empleado" required>
-                <option *ngFor="let empleado of empleados" value="{{empleado.Id}}">{{empleado.nombreCompleto}}</option>              
+            <select id="empleadoId" formControlName= "empleadoId" name="empleadoId" required>
+                <option *ngFor="let empleado of empleados" value="{{empleado.id}}">{{empleado.nombreCompleto}}</option>              
             </select>
         </label>
         <br>
         <label class="form-agregar_label">
             Lugar: <br>
-            <select id="info" formControlname= "info" name="lugar" required>
-                <option *ngFor="let lugar of lugares" value="{{lugar.Id}}">{{lugar.direccion}}</option>              
+            <select id="lugarId" formControlName= "lugarId" name="lugarId" required>
+                <option *ngFor="let lugar of lugares" value="{{lugar.id}}">{{lugar.direccion}}</option>              
             </select>
         </label>
 
         <br>
         <input type="submit" value="Agregar tarea"> 
     </form>
+
+<hr>
+<div>{{tarea}}</div>
 
    

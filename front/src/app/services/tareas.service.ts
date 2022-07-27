@@ -23,7 +23,7 @@ export class TareasService {
   }
 
   getIdEmpleado () {
-    return this.http.get('/empleado/:id');
+    return this.http.get('/api/empleado/:id');
   }
 
   findEmpleado (termino: string) {
@@ -34,9 +34,16 @@ export class TareasService {
     return this.http.get('/api/lugares');
   }
 
-  // insertarTarea () {
-  //   return this.http.post('/agregar-tarea', tareas);
-  // }
+insertarTarea ( fecha: Date, descripcion: string, empleadoId: any, lugarId: any ) {
+  console.log( descripcion );
+  return this.http.post('/api/agregar-tarea', {
+    fecha: fecha,
+    descripcion: descripcion,
+    empleadoId : empleadoId,
+    lugarId: lugarId
+  });
+  
+ }
 
 }
 

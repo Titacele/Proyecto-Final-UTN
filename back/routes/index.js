@@ -36,9 +36,10 @@ router.get('/lugares', async (req, res) => {
 /* POST agregar-tarea */
 router.post('/agregar-tarea', async (req, res) => {
   let {fecha, descripcion, empleadoId, lugarId} = req.body;
+  console.log(fecha, descripcion, empleadoId, lugarId);
 
-  // titulo, precio, portada, autorId
-  await api.insertTasks(fecha, descripcion, empleadoId, lugarId);
+  const respuesta= await api.insertTasks(fecha, descripcion, empleadoId, lugarId);
+  console.log(respuesta);
 
   res.status(200).send('ok');
 });

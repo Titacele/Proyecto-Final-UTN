@@ -41,8 +41,18 @@ export class AgregarComponent implements OnInit {
   
 
   onSubmit() {
-    console.log(this.agregarForm.value);
+   
+    // console.log(this.agregarForm.value);
+    // console.log(this.agregarForm)
+   
 
+    const { fecha } = this.agregarForm.value;
+    const { descripcion } = this.agregarForm.value;
+    const { empleadoId } = this.agregarForm.value;
+    const { lugarId } = this.agregarForm.value;
+    this.tareasService.insertarTarea(fecha, descripcion, empleadoId, lugarId).subscribe(tarea => {
+      console.log(tarea)
+    });
 
   }
 

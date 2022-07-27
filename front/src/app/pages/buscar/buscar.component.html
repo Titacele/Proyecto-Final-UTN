@@ -9,10 +9,23 @@
     <input type="submit" value="Buscar">
 </form>
 
+<!-- 
+
+<div class="wrapper" *nfIf = tarea Filtrada>
+ <app-card
+        *ngFor="let tarea of tareas"
+        [fecha] = "tarea.fecha"
+        [descripcion] = "tarea.descripcion"
+        [asignado] = "tarea.empleadoId"
+        [lugar] = "tarea.lugarId" 
+    ></app-card>
+</div>
+
+ -->
+
 <br>
 
 <div class="titulo">
     <h2> Elementos encontrados: </h2>
     <pre>{{ tarea | json }}</pre>
-    <!-- <p>{{tarea.descripcion}}</p> Con este no pude mostrarlo-->
 </div>
