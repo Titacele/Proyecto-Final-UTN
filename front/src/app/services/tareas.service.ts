@@ -18,6 +18,10 @@ export class TareasService {
     return this.http.get(`/api/buscar?termino=${termino}`);
   }
 
+  findEmployeeTasks (termino: string) {
+    return this.http.get(`/api/buscar-empleado?termino=${termino}`);
+  }
+
   getEmpleados () {
     return this.http.get('/api/empleado');
   }

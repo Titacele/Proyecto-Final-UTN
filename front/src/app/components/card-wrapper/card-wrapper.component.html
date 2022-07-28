@@ -4,8 +4,8 @@
         *ngFor="let tarea of tareas"
         [fecha] = "tarea.fecha"
         [descripcion] = "tarea.descripcion"
-        [asignado] = "tarea.empleadoId"
-        [lugar] = "tarea.lugar.direccion" 
+        [empleado] = "tarea.empleado.nombreCompleto"
+        [lugar] = "tarea.lugar.direccion"        
     ></app-card>
 </div>
 

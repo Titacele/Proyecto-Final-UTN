@@ -76,12 +76,46 @@ const findTaskByDescription = async (termino) => {
     return tareas;
 }
 
+// WHERE empleado LIKE "%termino%"
+const findTaskByEmployee = async (termino) => {
+    const tareas = await db.tarea.findAll({
+                            include: db.empleado,
+                            include: db.lugar,
+        where: {
+            descripcion: {
+                [Op.substring]: termino,
+            }
+        }
+    }).then(result => {
+        return result;
+    });
+
+    return tareas;
+}
+
+
 const insertTasks = async (fecha, descripcion, empleadoId, lugarId) => {
     const tarea = await db.tarea.create({
         fecha, descripcion, empleadoId, lugarId
     });
     
     return tarea;
+}
+
+const insertEmployee = async (nombreCompleto, dni) => {
+    const tarea = await db.empleado.create({
+        nombreCompleto, dni
+    });
+    
+    return empleado;
+}
+
+const insertPlace = async (direccion, localidad, cliente) => {
+    const tarea = await db.empleado.create({
+        direccion, localidad, cliente
+    });
+    
+    return empleado;
 }
 
 
@@ -92,5 +126,8 @@ module.exports = {
     getPlaces,
     getTasksById,
     findTaskByDescription,
-    insertTasks
+    insertTasks,
+    findTaskByEmployee,
+    insertEmployee,
+    insertPlace
 }

@@ -1,7 +1,4 @@
 
-<!-- entre parentesis trabajamos eventos tipo click o submit -->
-<!--Usamos el evento ngSubmit para llamar a la función onSubmit cuando el formulario se envía-->
-
 <form class="busqueda" [formGroup]="busquedaForm" (ngSubmit)="onSubmit()">
     <label for="termino">Buscar por tarea:</label>
     <input type="search" id="termino" formControlName="termino" placeholder="Búsqueda de tarea" class="buscar">
@@ -9,23 +6,23 @@
     <input type="submit" value="Buscar">
 </form>
 
-<!-- 
-
-<div class="wrapper" *nfIf = tarea Filtrada>
- <app-card
-        *ngFor="let tarea of tareas"
-        [fecha] = "tarea.fecha"
-        [descripcion] = "tarea.descripcion"
-        [asignado] = "tarea.empleadoId"
-        [lugar] = "tarea.lugarId" 
-    ></app-card>
-</div>
-
- -->
-
-<br>
-
 <div class="titulo">
     <h2> Elementos encontrados: </h2>
-    <pre>{{ tarea | json }}</pre>
-</div>
+
+    <div class="wrapper" *ngIf = tareaFiltrada>
+
+        <app-card
+                *ngFor="let tarea of tareas"
+                [fecha] = "tarea.fecha"
+                [descripcion] = "tarea.descripcion"
+                [empleado] = "tarea.empleadoId"
+                [lugar] = "tarea.lugar.direccion" 
+        ></app-card>
+    </div>
+
+ 
+
+
+
+
+    <!-- <pre>{{ tarea | json }}</pre> -->

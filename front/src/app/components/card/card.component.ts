@@ -11,7 +11,7 @@ export class CardComponent implements OnInit {
 
   @Input() fecha = Date; 
   @Input() descripcion: string | undefined;
-  @Input() asignado: string | undefined;
+  @Input() empleado: string | undefined;
   @Input() lugar: string | undefined;
   
   ngOnInit(): void {

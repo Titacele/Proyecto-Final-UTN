@@ -11,7 +11,6 @@ router.get('/tareas', async (req, res) => {
 });
 
 router.get('/tarea/:id', async (req, res) => {
-  // Le enviamos como parámetro el ID del libro que quiere ver el usuario
   const tarea = await api.getTasksById(req.params.id);
   res.send(tarea);
 });
@@ -44,6 +43,29 @@ router.post('/agregar-tarea', async (req, res) => {
   res.status(200).send('ok');
 });
 
+/* POST agregar-empleado */
+router.post('/agregar-empleado', async (req, res) => {
+  let {nombreCompleto, dni} = req.body;
+  console.log(nombreCompleto, dni);
+
+  const respuesta= await api.insertEmployee(nombreCompleto, dni);
+  console.log(respuesta);
+
+  res.status(200).send('ok');
+});
+
+/* POST agregar-lugar */
+router.post('/agregar-lugar', async (req, res) => {
+  let {direccion, localidad, cliente} = req.body;
+  console.log(direccion, localidad, cliente);
+
+  const respuesta= await api.insertPlace(direccion, localidad, cliente);
+  console.log(respuesta);
+
+  res.status(200).send('ok');
+});
+
+
 /* GET buscar (Desde el frontend llamamos a: localhost:3000/api/buscar?termino=sarasa) */
 router.get('/buscar', async (req, res) => {
   const { termino } = req.query;
@@ -53,5 +75,13 @@ router.get('/buscar', async (req, res) => {
   res.send(results);
 });
 
+/* GET buscar (Desde el frontend llamamos a: localhost:3000/api/buscar?termino=sarasa) */
+router.get('/buscar-empleado', async (req, res) => {
+  const { termino } = req.query;
+  const results = await api.findTaskByEmployee(termino);
+
+  //Devuelvo el resultado de esa búsqueda en formato JSON
+  res.send(results);
+});
 
 module.exports = router;

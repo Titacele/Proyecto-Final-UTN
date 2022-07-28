@@ -14,13 +14,13 @@ export class BuscarComponent implements OnInit {
     termino: new FormControl(),
   });
 
-//tareaFiltrada = false;
-  
+ 
   constructor(
     private tareasService: TareasService
   ) { }
 
-  tarea: any;
+  tareaFiltrada = false;
+  tareas: any;
 
 onSubmit () {
   console.log('Va bien');
@@ -28,7 +28,17 @@ onSubmit () {
   const { termino } = this.busquedaForm.value;  
   this.tareasService.findTasks(termino).subscribe(tareas => {
   console.log(tareas);
-  this.tarea = tareas;
+  let filtrados = []
+  for (const [key, value] of Object.entries(tareas)) {
+    if (value.descripcion.includes(termino)) {
+      filtrados.push(value);
+    }
+  }
+
+  console.log(filtrados);
+  this.tareas = tareas;
+  this.tareaFiltrada = true;
+
   });
 
   //const { termino } = this.busquedaForm.value;
