@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ContactoComponent } from './pages/contacto/contacto.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
 import { MapasComponent } from './pages/mapas/mapas.component';
 import { AgregarComponent } from './pages/agregar/agregar.component';
+import { ClientesComponent } from './pages/clientes/clientes.component';
+import { EmpleadoComponent } from './pages/empleado/empleado.component';
 
 // La home siempre primera y el 404 siempre al final
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'buscar', component: BuscarComponent},
   {path: 'mapas', component: MapasComponent},
   {path: 'agregar', component: AgregarComponent},
-  {path: 'contacto', component: ContactoComponent},
+  {path: 'clientes', component: ClientesComponent},
+  {path:'empleado', component: EmpleadoComponent},
   {path: '**', component: NotFoundComponent}
 ];
 

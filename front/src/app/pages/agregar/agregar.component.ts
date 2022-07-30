@@ -38,14 +38,8 @@ export class AgregarComponent implements OnInit {
   });
   }
 
-  
-
   onSubmit() {
    
-    // console.log(this.agregarForm.value);
-    // console.log(this.agregarForm)
-   
-
     const { fecha } = this.agregarForm.value;
     const { descripcion } = this.agregarForm.value;
     const { empleadoId } = this.agregarForm.value;

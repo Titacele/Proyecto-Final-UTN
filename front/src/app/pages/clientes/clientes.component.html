@@ -1,0 +1,23 @@
+<h1>Agregar cliente</h1>
+ 
+    <form class="form-agregar" [formGroup]="agregarForm" (ngSubmit)="onSubmit()">
+        <label class="form-agregar_label" for="info">
+            Dirección:
+            <input type="text" id="direccion" formControlName= "direccion" required>
+        </label>
+        <br>
+        <label class="form-agregar_label" for="info">
+            Localidad:
+            <input type="text" id="localidad" formControlName= "localidad" required>
+        </label>
+        <br>
+        <label class="form-agregar_label" for="info">
+            Nombre Cliente:
+            <input type="text" id="cliente" formControlName= "cliente" required>
+        </label>
+
+        <br>
+        <input type="submit" value="Agregar Cliente"> 
+    </form>
+
+<hr>

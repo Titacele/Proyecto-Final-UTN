@@ -103,7 +103,7 @@ const insertTasks = async (fecha, descripcion, empleadoId, lugarId) => {
 }
 
 const insertEmployee = async (nombreCompleto, dni) => {
-    const tarea = await db.empleado.create({
+    const empleado = await db.empleado.create({
         nombreCompleto, dni
     });
     
@@ -111,11 +111,11 @@ const insertEmployee = async (nombreCompleto, dni) => {
 }
 
 const insertPlace = async (direccion, localidad, cliente) => {
-    const tarea = await db.empleado.create({
+    const lugar = await db.lugar.create({
         direccion, localidad, cliente
     });
     
-    return empleado;
+    return lugar;
 }
 
 

@@ -46,8 +46,27 @@ insertarTarea ( fecha: Date, descripcion: string, empleadoId: any, lugarId: any 
     empleadoId : empleadoId,
     lugarId: lugarId
   });
-  
  }
+
+ insertarLugar ( direccion: string, localidad: string, cliente: string ) {
+  console.log( direccion );
+  return this.http.post('/api/agregar-lugar', {
+    direccion: direccion,
+    localidad : localidad,
+    cliente: cliente
+  });
+ }
+
+ insertarEmpleado ( nombre: any, dni: any ) {
+  console.log( nombre );
+  return this.http.post('/api/agregar-empleado', {
+    nombre: nombre,
+    dni: dni,
+  });
+ }
+
+
+
 
 }
 

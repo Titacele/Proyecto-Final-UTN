@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { CardComponent } from './components/card/card.component';
 import { CardWrapperComponent } from './components/card-wrapper/card-wrapper.component';
-import { ContactoComponent } from './pages/contacto/contacto.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { BuscarComponent } from './pages/buscar/buscar.component';
@@ -19,6 +18,8 @@ import { HamburguesaComponent } from './components/hamburguesa/hamburguesa.compo
 import { MapasComponent } from './pages/mapas/mapas.component';
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ClientesComponent } from './pages/clientes/clientes.component';
+import { EmpleadoComponent } from './pages/empleado/empleado.component';
 
 @NgModule({
   declarations: [
@@ -26,14 +27,15 @@ import { FooterComponent } from './components/footer/footer.component';
     NavComponent,
     CardComponent,
     CardWrapperComponent,
-    ContactoComponent,
     HomeComponent,
     NotFoundComponent,
     BuscarComponent,
     HamburguesaComponent,
     MapasComponent,
     AgregarComponent,
-    FooterComponent
+    FooterComponent,
+    ClientesComponent,
+    EmpleadoComponent
   ],
   imports: [
     BrowserModule,
