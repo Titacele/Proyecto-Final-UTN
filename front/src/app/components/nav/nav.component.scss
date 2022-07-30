@@ -6,8 +6,10 @@
     margin: 10px;
     border-radius: 10px;
     
+    
     &-item {
         flex-grow: 1;
+        border-right: 2px solid var(--blanco);
         
         &_link {
             display: block;

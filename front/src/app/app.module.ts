@@ -18,6 +18,7 @@ import { BuscarComponent } from './pages/buscar/buscar.component';
 import { HamburguesaComponent } from './components/hamburguesa/hamburguesa.component';
 import { MapasComponent } from './pages/mapas/mapas.component';
 import { AgregarComponent } from './pages/agregar/agregar.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
     BuscarComponent,
     HamburguesaComponent,
     MapasComponent,
-    AgregarComponent
+    AgregarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
