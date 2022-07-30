@@ -1,19 +1,25 @@
-<h1>Agregar empleado</h1>
+<div class="agregar">
+    <h1>Agregar empleado</h1>
  
-    <form class="form-agregar" [formGroup]="agregarForm" (ngSubmit)="onSubmit()">
-        <label class="form-agregar_label" for="info">
-            Nombre completo:
-            <input type="text" id="nombreCompleto" formControlName="nombreCompleto" required="mal">
-        </label>
-        <br>
-        <label class="form-agregar_label" for="info">
-            DNI:
-            <input type="number" id="dni" formControlName= "dni" required>
-        </label>
-        <br>
+        <form class="form-agregar" [formGroup]="agregarForm" (ngSubmit)="onSubmit()">
+            <label class="form-agregar_label" for="info">
+                Nombre completo:
+                <input type="text" id="nombreCompleto" formControlName="nombreCompleto" required>
+            </label>
+            <br>
+            <label class="form-agregar_label" for="info">
+                DNI:
+                <input type="number" id="dni" formControlName= "dni" required>
+            </label>
+         <br>
         
-        <br>
-        <input type="submit" value="Agregar Empleado"> 
-    </form>
+         <br>
+            <input type="submit" value="AgregarEmpleado"> 
+        </form>
 
-<hr>
+    <br>
+    <hr>
+
+    
+
+

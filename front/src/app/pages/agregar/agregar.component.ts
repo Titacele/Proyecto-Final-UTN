@@ -48,6 +48,11 @@ export class AgregarComponent implements OnInit {
       console.log(tarea)
     });
 
+    console.warn(this.agregarForm.value);
+    this.agregarForm.reset();
+    alert('CARGADO');
+      
+
   }
 
 

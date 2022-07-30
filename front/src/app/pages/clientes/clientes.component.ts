@@ -30,6 +30,12 @@ export class ClientesComponent implements OnInit {
       this.tareasService.insertarLugar(direccion, localidad, cliente).subscribe(lugar => {
         console.log(lugar)
       });
+
+      console.warn(this.agregarForm.value);
+      this.agregarForm.reset();
+      alert('CARGADO');
+      
+      
     }
 
   ngOnInit(): void {

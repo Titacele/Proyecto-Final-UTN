@@ -33,4 +33,7 @@ Notas del desarrollador:
 1.- Detecto un error cada vez que se carga algo a la DB pero no pude descubir a que se debe.
 Aunque se carga igual la info.
 
+2.- No logro que aparezca el campo NombreCompleto de la DB de Empleado en ningun lado, incluso no logro cargar
+ese campo cuando se realiza la cara completa. Siempre aparece Undefined.
+
 *.- Voy a seguir trabajando para agregarle usuarios que se puedan logear
