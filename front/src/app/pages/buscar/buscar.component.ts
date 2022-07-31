@@ -40,13 +40,7 @@ onSubmit () {
   this.tareaFiltrada = true;
 
   });
-
-  //const { termino } = this.busquedaForm.value;
-  //this.tareasService.getTasks( ).subscibe (respuesta => {
-    //console.log (respuesta);
-  //});
-
-  
+   
 }
 
   ngOnInit(): void {

@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
 // Este módulo de HTTP Client nos permite hacer llamadas a un servidor
 // Llamadas a APIs
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +24,7 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ClientesComponent } from './pages/clientes/clientes.component';
 import { EmpleadoComponent } from './pages/empleado/empleado.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -42,6 +47,11 @@ import { EmpleadoComponent } from './pages/empleado/empleado.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

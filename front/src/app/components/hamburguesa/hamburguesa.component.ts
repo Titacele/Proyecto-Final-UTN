@@ -18,6 +18,7 @@ export class HamburguesaComponent implements OnInit {
   tareas: any;
   value: any;
 
+
   mostrarMenu () {
     this.show=!this.show;
     console.log(this.show);
@@ -29,10 +30,9 @@ export class HamburguesaComponent implements OnInit {
     this.value = value;
     });
   }
- 
   mostrarEmpleados () {
     this.tareasService.getEmpleados().subscribe((empleados: any) => {
-      console.log(empleados);
+      console.log(empleados.id);
       this.empleados = empleados;
     });
   }
@@ -45,10 +45,45 @@ export class HamburguesaComponent implements OnInit {
   }
 
 
+  devolverValue () {
+     this.tareasService.findTasksbyEmpleadoId().subscribe((resultado: number) =>{
+     console.log (resultado);
+    });
+  }
+
+  // resultado!:string;
+  // opcion1=false;
+  // opcion2=false;
+  // opcion3=false;
+  // opcion4=false;
+  // opcion5=false;
+
+  // operar() {
+  //   this.resultado='';
+  //   if (this.opcion1) {
+  //     this.resultado+= 1;
+  //   }
+  //   if (this.opcion2) {
+  //     this.resultado+= 2;
+  //   }
+  //   if (this.opcion3) {
+  //     this.resultado+= 3;
+  //   }
+  //   if (this.opcion4) {
+  //     this.resultado+= 4;
+  //   }
+  //   if (this.opcion5) {
+  //     this.resultado+= 5;
+  // }
+//}
+
+
+
+
   ngOnInit(): void {
     this.mostrarEmpleados();
-    this.devolverValue();
     this.mostrarInfoTareas();
+    //this.resultado
   }
 
 }

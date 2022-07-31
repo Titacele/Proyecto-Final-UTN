@@ -13,6 +13,7 @@ export class CardWrapperComponent implements OnInit {
   ) { }
 
   tareas: any;
+  
 
   mostrarInfoTareas () {
     this.tareasService.getTasks().subscribe((tareas: any) => {
@@ -20,6 +21,7 @@ export class CardWrapperComponent implements OnInit {
       this.tareas = tareas;
     });
   }
+  
 
   title = 'Tareas';
 

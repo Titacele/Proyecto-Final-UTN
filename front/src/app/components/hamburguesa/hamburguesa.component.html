@@ -3,22 +3,40 @@
     <button class="clickBtn" (click)="mostrarMenu()" >Menú empleado</button>
 <br>
     <div class="sub-menu" *ngIf="show">
+
     <label *ngFor="let empleado of empleados">
         <input type="checkbox" (click)="devolverValue()" value="{empleado.id}"> {{empleado.nombreCompleto}} 
-    </label>
-</div>
+    </label> 
     
-<!-- <div class="mostrar-tareas" *ngIf="value">
-
-    <app-card
-        *ngFor="let tarea of tareas"
-        [fecha] = "tarea.fecha"
-        [descripcion] = "tarea.descripcion"
-        [empleado] = "tarea.empleadoId"
-        [lugar] = "tarea.lugarId" 
-    ></app-card>
+</div>
 
 
+
+
+    
+<!-- <mat-checkbox [(ngModel)]="opcion1">Sumar</mat-checkbox>
+    <mat-checkbox [(ngModel)]="opcion2">Restar</mat-checkbox>
+    <mat-checkbox [(ngModel)]="opcion3">Multiplicar</mat-checkbox>
+    <mat-checkbox [(ngModel)]="opcion4">Dividir</mat-checkbox>
+    <mat-checkbox [(ngModel)]="opcion5">Dividir</mat-checkbox>
+
+    <button mat-raised-button color="primary" (click)="operar()">Operar</button>
+    <p>{{resultado}}</p> -->
+  
+
+    
+<!-- <div class="tarea">
+    <h2> Elementos encontrados: </h2>
+
+    <div class="wrapper" *ngIf = tareaFiltrada>
+
+        <app-card
+                *ngFor="let tarea of tareas"
+                [fecha] = "tarea.fecha"
+                [descripcion] = "tarea.descripcion"
+                [empleado] = "tarea.empleado"
+                [lugar] = "tarea.lugar.direccion" 
+        ></app-card>
 </div> -->
 
 

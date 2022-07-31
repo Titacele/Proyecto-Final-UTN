@@ -18,7 +18,12 @@ export class TareasService {
     return this.http.get(`/api/buscar?termino=${termino}`);
   }
 
-  findEmployeeTasks (termino: string) {
+  findTasksbyEmpleadoId (resultado: number) {
+    return this.http.get(`/api/buscar-empleadoId?termino=${resultado}`);
+  }
+
+
+  findEmployeeTasks (termino: number) {
     return this.http.get(`/api/buscar-empleado?termino=${termino}`);
   }
 

@@ -82,7 +82,7 @@ const findTaskByEmployee = async (termino) => {
                             include: db.empleado,
                             include: db.lugar,
         where: {
-            descripcion: {
+            empleadoId: {
                 [Op.substring]: termino,
             }
         }

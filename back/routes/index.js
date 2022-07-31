@@ -75,13 +75,14 @@ router.get('/buscar', async (req, res) => {
   res.send(results);
 });
 
-/* GET buscar (Desde el frontend llamamos a: localhost:3000/api/buscar?termino=sarasa) */
-router.get('/buscar-empleado', async (req, res) => {
+router.get('/buscar-empleadoId', async (req, res) => {
   const { termino } = req.query;
   const results = await api.findTaskByEmployee(termino);
-
   //Devuelvo el resultado de esa búsqueda en formato JSON
   res.send(results);
 });
+
+
+
 
 module.exports = router;
