@@ -34,6 +34,6 @@ Notas del desarrollador:
 Aunque se carga igual la info.
 
 2.- No logro que aparezca el campo NombreCompleto de la DB de Empleado en ningun lado, incluso no logro cargar
-ese campo cuando se realiza la cara completa. Siempre aparece Undefined.
+ese campo cuando se realiza la cara completa. Siempre aparece Undefined. Y en el filtro de checkbox, a pesar de que logre que se viera el campo NombreCompleto, no me devuelve ningun id, solo Undefined.
 
 *.- Voy a seguir trabajando para agregarle usuarios que se puedan logear

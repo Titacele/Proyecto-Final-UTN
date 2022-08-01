@@ -4,21 +4,38 @@
 <br>
     <div class="sub-menu" *ngIf="show">
 
+    <!-- 
+        Acá logre que se viera el campo nombreCompleto de la tabla empleados, pero el id me devuelve undifined
+        por eso opte por cargarlos a mano aunque no se actualizaría automaticamente.
+
     <label *ngFor="let empleado of empleados">
-        <input type="checkbox" (click)="devolverValue()" value="{empleado.id}"> {{empleado.nombreCompleto}} 
+         1) <input type="checkbox" (click)="devolverValue()" value="{empleado.id}"> {{empleado.nombreCompleto}}
+         2) <mat-checkbox [(ngModel)]="empleado.id">{{empleado.nombreCompleto}}</mat-checkbox> 
     </label> 
-    
+     con opcion 2) <button mat-raised-button color="primary" (click)="operar()">Filtrar</button>
+
+     -->
+
+
+    <mat-checkbox [(ngModel)]="opcion1">McClain John</mat-checkbox>
+    <mat-checkbox [(ngModel)]="opcion2">Connor John</mat-checkbox>
+    <mat-checkbox [(ngModel)]="opcion3">Schaeffer Alan</mat-checkbox>
+    <mat-checkbox [(ngModel)]="opcion4">Riggs Martin</mat-checkbox>
+    <mat-checkbox [(ngModel)]="opcion5">Anderson Thomas</mat-checkbox>
+
+    <button mat-raised-button color="primary" (click)="operar()">Operar</button>
+
 </div>
 
 
 
 
     
-<!-- <mat-checkbox [(ngModel)]="opcion1">Sumar</mat-checkbox>
-    <mat-checkbox [(ngModel)]="opcion2">Restar</mat-checkbox>
-    <mat-checkbox [(ngModel)]="opcion3">Multiplicar</mat-checkbox>
-    <mat-checkbox [(ngModel)]="opcion4">Dividir</mat-checkbox>
-    <mat-checkbox [(ngModel)]="opcion5">Dividir</mat-checkbox>
+<!--<mat-checkbox [(ngModel)]="opcion1">McClain John</mat-checkbox>
+    <mat-checkbox [(ngModel)]="opcion2">Connor John</mat-checkbox>
+    <mat-checkbox [(ngModel)]="opcion3">Schaeffer Alan</mat-checkbox>
+    <mat-checkbox [(ngModel)]="opcion4">Riggs Martin</mat-checkbox>
+    <mat-checkbox [(ngModel)]="opcion5">Anderson Thomas</mat-checkbox>
 
     <button mat-raised-button color="primary" (click)="operar()">Operar</button>
     <p>{{resultado}}</p> -->

@@ -1,12 +1,17 @@
+<div class="principal">
+   
+    <app-hamburguesa class="menu"></app-hamburguesa>
 
-<div class="wrapper">
-    <app-card
-        *ngFor="let tarea of tareas"
-        [fecha] = "tarea.fecha"
-        [descripcion] = "tarea.descripcion"
-        [empleado] = "tarea.empleado"
-        [lugar] = "tarea.lugar.direccion"        
-    ></app-card>
+    <div class="wrapper">
+        <app-card
+            *ngFor="let tarea of tareas"
+            [fecha] = "tarea.fecha"
+            [descripcion] = "tarea.descripcion"
+            [empleado] = "tarea.empleado"
+            [lugar] = "tarea.lugar.direccion"        
+        ></app-card>
+    </div>
+
+    
 </div>
-
 

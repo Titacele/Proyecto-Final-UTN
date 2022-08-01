@@ -16,7 +16,6 @@ export class HamburguesaComponent implements OnInit {
 
   empleados: any;
   tareas: any;
-  value: any;
 
 
   mostrarMenu () {
@@ -24,12 +23,6 @@ export class HamburguesaComponent implements OnInit {
     console.log(this.show);
   }
 
-  devolverValue() {
-    this.tareasService.getIdEmpleado().subscribe((value: any) => {
-    console.log(value);
-    this.value = value;
-    });
-  }
   mostrarEmpleados () {
     this.tareasService.getEmpleados().subscribe((empleados: any) => {
       console.log(empleados.id);
@@ -44,46 +37,42 @@ export class HamburguesaComponent implements OnInit {
     });
   }
 
+  resultado!:number;
+  opcion1=false;
+  opcion2=false;
+  opcion3=false;
+  opcion4=false;
+  opcion5=false;
 
-  devolverValue () {
-     this.tareasService.findTasksbyEmpleadoId().subscribe((resultado: number) =>{
-     console.log (resultado);
-    });
+  operar() {
+    this.resultado=0;
+    if (this.opcion1) {
+      this.resultado= 1;
+      console.log(this.resultado);
+    }
+    if (this.opcion2) {
+      this.resultado= 2;
+      console.log(this.resultado);
+    }
+    if (this.opcion3) {
+      this.resultado= 3;
+      console.log(this.resultado);
+    }
+    if (this.opcion4) {
+      this.resultado= 4;
+      console.log(this.resultado);
+    }
+    if (this.opcion5) {
+      this.resultado= 5;
+      console.log(this.resultado);
+    }
   }
-
-  // resultado!:string;
-  // opcion1=false;
-  // opcion2=false;
-  // opcion3=false;
-  // opcion4=false;
-  // opcion5=false;
-
-  // operar() {
-  //   this.resultado='';
-  //   if (this.opcion1) {
-  //     this.resultado+= 1;
-  //   }
-  //   if (this.opcion2) {
-  //     this.resultado+= 2;
-  //   }
-  //   if (this.opcion3) {
-  //     this.resultado+= 3;
-  //   }
-  //   if (this.opcion4) {
-  //     this.resultado+= 4;
-  //   }
-  //   if (this.opcion5) {
-  //     this.resultado+= 5;
-  // }
-//}
-
-
 
 
   ngOnInit(): void {
     this.mostrarEmpleados();
     this.mostrarInfoTareas();
-    //this.resultado
+    this.resultado
   }
 
 }
