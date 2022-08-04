@@ -11,8 +11,10 @@ export class MapsService {
   ) { }
 
   getMapsInfo () {
-    return this.http.get('http://datosabiertos-transporte-apis.buenosaires.gob.ar:443/datos/movilidad/transito/application/json');
+    return this.http.get('https://get.geojs.io/v1/ip/geo.json');
   }
+
+
 }
 
 

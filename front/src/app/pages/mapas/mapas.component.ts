@@ -14,18 +14,20 @@ export class MapasComponent implements OnInit {
 
   ) { }
 
-  maps: any;
+  varios: any;
+  gatos: any;
 
   mostrarInfoMaps () {
     this.mapsService.getMapsInfo().subscribe(respuesta => {
       console.log(respuesta);
-      this.maps = respuesta;
+      this.varios = respuesta;
     });
   }
 
- 
+  
   ngOnInit(): void {
     this.mostrarInfoMaps();
+    
   }
 
 }
