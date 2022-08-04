@@ -8,11 +8,13 @@
         right: 0px;
         animation: truck-move 5s;
         animation-timing-function: linear;
+        animation-iteration-count: infinite;
     }
 }
 
 @keyframes truck-move {
     to{
         transform: translate(1000px);
+        
     }
 }

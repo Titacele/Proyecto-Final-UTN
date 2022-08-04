@@ -16,6 +16,9 @@ export class HamburguesaComponent implements OnInit {
 
   empleados: any;
   tareas: any;
+  resultado: number | undefined;
+
+  tareaFiltrada = false;
 
 
   mostrarMenu () {
@@ -37,7 +40,7 @@ export class HamburguesaComponent implements OnInit {
     });
   }
 
-  resultado!:number;
+  resultados!:number;
   opcion1=false;
   opcion2=false;
   opcion3=false;
@@ -45,34 +48,56 @@ export class HamburguesaComponent implements OnInit {
   opcion5=false;
 
   operar() {
-    this.resultado=0;
+    this.resultados=0;
     if (this.opcion1) {
-      this.resultado= 1;
-      console.log(this.resultado);
+      this.resultados= 1;
+      console.log(this.resultados);
+      this.opcion1=true;
     }
     if (this.opcion2) {
-      this.resultado= 2;
-      console.log(this.resultado);
+      this.resultados= 2;
+      console.log(this.resultados);
     }
     if (this.opcion3) {
-      this.resultado= 3;
-      console.log(this.resultado);
+      this.resultados= 3;
+      console.log(this.resultados);
     }
     if (this.opcion4) {
-      this.resultado= 4;
-      console.log(this.resultado);
+      this.resultados= 4;
+      console.log(this.resultados);
     }
     if (this.opcion5) {
-      this.resultado= 5;
-      console.log(this.resultado);
+      this.resultados= 5;
+      console.log(this.resultados);
     }
+
+    let resultado = this.resultados;
+    this.tareasService.findTasksbyEmpleadoId(resultado).subscribe(tareas => {
+    console.log(tareas);
+
+    let filtrados = []
+    for (const [key, value] of Object.entries(tareas)) {
+      if (value.empleadoId = this.resultado) {
+      filtrados.push(resultado);
+      }
+  }
+
+  console.log(filtrados);
+  this.tareas = tareas;
+  this.tareaFiltrada = true;
+
+  let x = this.tareaFiltrada
+  
+   });
+     
   }
 
 
   ngOnInit(): void {
     this.mostrarEmpleados();
     this.mostrarInfoTareas();
-    this.resultado
+    this.resultado;
+    this.tareas;
   }
 
 }

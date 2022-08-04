@@ -23,7 +23,7 @@ export class MapasComponent implements OnInit {
     });
   }
 
-  // onInit significa cuando se termina de cargar el componente
+ 
   ngOnInit(): void {
     this.mostrarInfoMaps();
   }

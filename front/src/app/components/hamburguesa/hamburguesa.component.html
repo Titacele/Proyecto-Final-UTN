@@ -1,8 +1,11 @@
 
-<div class="menu" >
+<div class="principal">
+
+
+<div class="principal_menu" >
     <button class="clickBtn" (click)="mostrarMenu()" >Menú empleado</button>
 <br>
-    <div class="sub-menu" *ngIf="show">
+    <div class="principal_menu_dos" *ngIf="show">
 
     <!-- 
         Acá logre que se viera el campo nombreCompleto de la tabla empleados, pero el id me devuelve undifined
@@ -23,37 +26,20 @@
     <mat-checkbox [(ngModel)]="opcion4">Riggs Martin</mat-checkbox>
     <mat-checkbox [(ngModel)]="opcion5">Anderson Thomas</mat-checkbox>
 
-    <button mat-raised-button color="primary" (click)="operar()">Operar</button>
+    <button mat-raised-button color="primary" (click)="operar()" class="principal_menu_dos_btn">Filtrar</button>
 
 </div>
 
-
-
-
-    
-<!--<mat-checkbox [(ngModel)]="opcion1">McClain John</mat-checkbox>
-    <mat-checkbox [(ngModel)]="opcion2">Connor John</mat-checkbox>
-    <mat-checkbox [(ngModel)]="opcion3">Schaeffer Alan</mat-checkbox>
-    <mat-checkbox [(ngModel)]="opcion4">Riggs Martin</mat-checkbox>
-    <mat-checkbox [(ngModel)]="opcion5">Anderson Thomas</mat-checkbox>
-
-    <button mat-raised-button color="primary" (click)="operar()">Operar</button>
-    <p>{{resultado}}</p> -->
-  
-
-    
-<!-- <div class="tarea">
-    <h2> Elementos encontrados: </h2>
-
-    <div class="wrapper" *ngIf = tareaFiltrada>
-
+<div class="wrapper" *ngIf = tareaFiltrada>
         <app-card
-                *ngFor="let tarea of tareas"
-                [fecha] = "tarea.fecha"
-                [descripcion] = "tarea.descripcion"
-                [empleado] = "tarea.empleado"
-                [lugar] = "tarea.lugar.direccion" 
+            *ngFor="let tarea of tareas"
+            [fecha] = "tarea.fecha"
+            [descripcion] = "tarea.descripcion"
+            [empleado] = "tarea.empleado"
+            [lugar] = "tarea.lugar.direccion"        
         ></app-card>
-</div> -->
+    </div>
 
+
+</div>  
 

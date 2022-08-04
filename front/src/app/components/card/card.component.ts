@@ -13,6 +13,7 @@ export class CardComponent implements OnInit {
   @Input() descripcion: string | undefined;
   @Input() empleado: string | undefined;
   @Input() lugar: string | undefined;
+
   
   ngOnInit(): void {
   }

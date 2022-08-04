@@ -1,20 +1,6 @@
 body{
     background-color: var(--blanco);
 }
-.principal{
-    display: flex;
-    flex-direction: row;
-    align-content: flex-start;
-    max-width: 100%;
-}
-
-.menu{
-    padding-bottom: auto;
-    margin: 20px;
-    border-right: 1px solid var(--gris);
-    max-width: 30%;
-    
-}
 
 .wrapper {
     display: flex;

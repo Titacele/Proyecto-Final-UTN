@@ -10,9 +10,48 @@
     padding: 8px;
 }
 
-.menu {
-    margin: -7px;
+.principal{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    max-width: 100%;
 }
+
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 1000%;
+        margin-top: 40px;
+        margin-right: 20px;
+    }
+
+    .menu{
+        padding-bottom: auto;
+        margin: 20px;
+        border-right: 1px solid var(--gris);
+        max-width: 30%;
+    
+
+
+
+        .dos{        
+            padding-bottom: auto;
+            margin: -7px;
+            border-right: 1px solid var(--gris);
+            max-width: 30px;
+
+            .btn{
+                max-width: 20px;
+            }
+        }
+    }
+    
+ 
+
+
+
+
 
 @media (max-width: 767px) {
     .clickBtn {
