@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   title = 'Tareas';
+  subtitulo = 'Filtrar tareas por empleado:'
 
   ngOnInit(): void {
     

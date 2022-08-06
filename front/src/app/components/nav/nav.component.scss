@@ -25,3 +25,14 @@
         }
     }
 }
+
+
+@media (max-width: 767px) {
+    .lista{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .lista_item-link{
+        text-align: center;
+    }
+}

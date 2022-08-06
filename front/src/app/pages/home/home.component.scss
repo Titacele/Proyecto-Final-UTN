@@ -9,7 +9,22 @@
     max-width: 80%;
     border-bottom: 60px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+    
+.inicio{
+    max-width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mostrar{
+    max-width: 100%;
+    margin-top: -10px;
+    align-items: flex-start;
+}
+
 
 h1{
     text-align: center;
