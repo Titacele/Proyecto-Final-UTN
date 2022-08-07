@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UrlHandlingStrategy } from '@angular/router';
 // Importamos el servicio de gatitos
 import { MapsService } from 'src/app/services/maps.service';
 
@@ -11,11 +12,11 @@ export class MapasComponent implements OnInit {
 
   constructor(
     private mapsService: MapsService,
-
+    
   ) { }
 
   varios: any;
-  gatos: any;
+  
 
   mostrarInfoMaps () {
     this.mapsService.getMapsInfo().subscribe(respuesta => {
@@ -23,6 +24,7 @@ export class MapasComponent implements OnInit {
       this.varios = respuesta;
     });
   }
+
 
   
   ngOnInit(): void {

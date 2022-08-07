@@ -26,14 +26,3 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-
-
-Notas del desarrollador:
-
-1.- Detecto un error cada vez que se carga algo a la DB pero no pude descubir a que se debe.
-Aunque se carga igual la info.
-
-2.- No logro que aparezca el campo NombreCompleto de la DB de Empleado en ningun lado, incluso no logro cargar
-ese campo cuando se realiza la cara completa. Siempre aparece Undefined. Y en el filtro de checkbox, a pesar de que logre que se viera el campo NombreCompleto, no me devuelve ningun id, solo Undefined.
-
-*.- Voy a seguir trabajando para agregarle usuarios que se puedan logear
