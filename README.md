@@ -23,14 +23,14 @@ Notas del desarrollador:
 Aunque se carga igual la info.
 
 2.- No logro que aparezca el campo NombreCompleto de la DB de Empleado en ningun lado, incluso no logro cargar
-ese campo cuando se realiza la cara completa. Siempre aparece Undefined. Y en el filtro de checkbox, a pesar de que logre que se viera el campo NombreCompleto, no me devuelve ningun id como value, solo Undefined.
+ese campo cuando se realiza la cara completa. Siempre aparece Undefined. Y en el filtro de checkbox, a pesar de que logre que se viera el campo NombreCompleto, no me devuelve ningun id como value, solo Undefined. (Solución: checkbox manual para filtrar tareas)
 
 3.- Pautas opcionales:
     -Animación con CSS
     -Llamada a Api externa (https://get.geojs.io)
     -Uso de Express con MySql
     -Uso de paquetes NPM
-    -Sitio subido a Heroku
+    -Sitio subido a Heroku (no funcionó)
     -Sitio en Angular
 
 *.- Voy a seguir trabajando para agregarle usuarios que se puedan logear
